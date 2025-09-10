@@ -26,8 +26,8 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            -f Dockerfiles/${{ github.event.inputs.dockerfile }} \
-            -t ${{ env.DH_REGISTRY_NAME }}/${{ env.IMAGE_NAME }}:latest \
-            -t ${{ env.DH_REGISTRY_NAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }} \
-            -t ${{ env.DH_REGISTRY_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
+            -t ${{ secrets.DOCKER_USER }}/go-metrics:latest \
             .
+      - name: Push Docker image
+        run: |
+          docker push ${{ secrets.DOCKER_USER }}/go-metrics:latest
