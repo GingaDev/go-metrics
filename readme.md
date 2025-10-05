@@ -30,3 +30,5 @@ FATAL: “Could not start server: port already in use”
 •	WARNING when a non-critical issue happens (like retrying).
 •	ERROR when an operation fails.
 •	DEBUG only during development/testing.
+
+teste
